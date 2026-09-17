@@ -2,8 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import {
   ShieldCheck,
-  Users,
-  Building,
   MapPin,
   TrendingUp,
   Wallet,
@@ -12,20 +10,20 @@ import {
   ArrowRight,
   CheckCircle,
   HelpCircle,
-  FileText,
   Award,
   PhoneCall
 } from 'lucide-react';
 import LoanSimulator from '../components/LoanSimulator';
+import dgImg from '../assets/dg_fececam.png';
+import partnerImg from '../assets/hero_partner.jpg';
+import cornfieldImg from '../assets/cornfield.jpg';
 
 export default function Home() {
   return (
     <div className="space-y-16 pb-12">
 
       {/* HERO SECTION */}
-      <section className="bg-gradient-to-br from-[#004d2a] via-[#006838] to-[#01351d] text-white py-16 lg:py-24 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(#f59e0b_1px,transparent_1px)] [background-size:24px_24px] opacity-10"></div>
-
+      <section className="bg-gradient-to-br from-[#004d2a] via-[#006838] to-[#01351d] text-white py-16 lg:py-20 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
 
@@ -79,13 +77,15 @@ export default function Home() {
 
             </div>
 
-            {/* Hero Director Message Card */}
+            {/* Hero Director Message Card with Official Photo */}
             <div className="lg:col-span-5">
               <div className="bg-white text-gray-900 rounded-2xl shadow-2xl p-6 sm:p-8 border-4 border-amber-400 relative">
                 <div className="flex items-center gap-4 mb-4 pb-4 border-b border-gray-200">
-                  <div className="w-16 h-16 rounded-full bg-[#006838] text-amber-400 font-extrabold text-2xl flex items-center justify-center border-2 border-amber-400 shadow">
-                    DG
-                  </div>
+                  <img
+                    src={dgImg}
+                    alt="Taïrou BASSABI AMADOU - Directeur Général de la FECECAM-BÉNIN"
+                    className="w-20 h-20 rounded-full object-cover border-2 border-[#006838] shadow"
+                  />
                   <div>
                     <h2 className="text-xl font-bold text-[#006838]">Taïrou BASSABI AMADOU</h2>
                     <p className="text-sm text-gray-600 font-semibold">Directeur Général de la FECECAM-BÉNIN</p>
@@ -93,7 +93,7 @@ export default function Home() {
                 </div>
 
                 <blockquote className="text-gray-700 text-sm leading-relaxed italic mb-6">
-                  « Notre mission est d’être toujours plus proche de vous pour mieux vous servir. Grâce à notre couverture nationale, nous accompagnons les populations à faible revenu, les femmes, les agriculteurs et les PME dans tous leurs défis financiers. »
+                  « La FECECAM-BENIN a une couverture nationale. Elle est de ce fait, présente sur toute les soixante-dix-sept (77) communes que compte le Bénin pour mieux servir nos membres. »
                 </blockquote>
 
                 <div className="space-y-2 text-xs font-bold text-gray-800 bg-emerald-50 p-3.5 rounded-lg border border-emerald-200">
@@ -138,6 +138,35 @@ export default function Home() {
         </div>
       </section>
 
+      {/* PARTNERSHIP & FIELD ACTION BANNER */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+        <div className="rounded-2xl overflow-hidden shadow-xl border-4 border-[#006838] relative h-80">
+          <img
+            src={partnerImg}
+            alt="Accompagnement FECECAM des petites et moyennes entreprises"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-6">
+            <p className="text-white font-bold text-lg">
+              Partenaire financier de premier choix des petites et moyennes entreprises
+            </p>
+          </div>
+        </div>
+
+        <div className="rounded-2xl overflow-hidden shadow-xl border-4 border-amber-500 relative h-80">
+          <img
+            src={cornfieldImg}
+            alt="Soutien FECECAM au développement agricole au Bénin"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-6">
+            <p className="text-white font-bold text-lg">
+              Au service du développement socio-économique du Bénin depuis 1978
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* MAIN SERVICES / PILLARS SECTION */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         <div className="text-center space-y-3 max-w-3xl mx-auto">
@@ -153,8 +182,6 @@ export default function Home() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-
-          {/* Card 1: Microcrédit */}
           <div className="bg-white p-6 rounded-xl shadow-md border-t-4 border-[#006838] hover:shadow-xl transition-shadow flex flex-col justify-between">
             <div className="space-y-4">
               <div className="w-12 h-12 rounded-lg bg-emerald-100 text-[#006838] flex items-center justify-center font-bold">
@@ -170,7 +197,6 @@ export default function Home() {
             </Link>
           </div>
 
-          {/* Card 2: Épargne */}
           <div className="bg-white p-6 rounded-xl shadow-md border-t-4 border-amber-500 hover:shadow-xl transition-shadow flex flex-col justify-between">
             <div className="space-y-4">
               <div className="w-12 h-12 rounded-lg bg-amber-100 text-amber-800 flex items-center justify-center font-bold">
@@ -186,7 +212,6 @@ export default function Home() {
             </Link>
           </div>
 
-          {/* Card 3: Assurance */}
           <div className="bg-white p-6 rounded-xl shadow-md border-t-4 border-blue-600 hover:shadow-xl transition-shadow flex flex-col justify-between">
             <div className="space-y-4">
               <div className="w-12 h-12 rounded-lg bg-blue-100 text-blue-800 flex items-center justify-center font-bold">
@@ -202,7 +227,6 @@ export default function Home() {
             </Link>
           </div>
 
-          {/* Card 4: Transfert */}
           <div className="bg-white p-6 rounded-xl shadow-md border-t-4 border-[#006838] hover:shadow-xl transition-shadow flex flex-col justify-between">
             <div className="space-y-4">
               <div className="w-12 h-12 rounded-lg bg-emerald-100 text-[#006838] flex items-center justify-center font-bold">
@@ -217,7 +241,6 @@ export default function Home() {
               Découvrir les canaux <ArrowRight size={16} />
             </Link>
           </div>
-
         </div>
       </section>
 

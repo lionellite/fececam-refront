@@ -5,11 +5,10 @@ import {
   Mail,
   MapPin,
   Shield,
-  FileText,
   ExternalLink,
-  ChevronRight,
-  HeartHandshake
+  ChevronRight
 } from 'lucide-react';
+import logoWhiteImg from '../assets/fececam_white.png';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -22,9 +21,11 @@ export default function Footer() {
           {/* Brand & Overview Column */}
           <div className="space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded bg-[#006838] text-amber-400 flex items-center justify-center font-black text-lg border-2 border-amber-400">
-                FC
-              </div>
+              <img
+                src={logoWhiteImg}
+                alt="FECECAM Bénin Logo Blanc"
+                className="h-12 w-auto object-contain"
+              />
               <span className="font-bold text-xl text-white tracking-tight">
                 FECECAM <span className="text-amber-400">BÉNIN</span>
               </span>
@@ -126,7 +127,6 @@ export default function Footer() {
 
         </div>
 
-        {/* Bottom Bar & Legal Disclaimer */}
         <div className="pt-8 border-t border-gray-800 text-xs text-gray-400 flex flex-col md:flex-row items-center justify-between gap-4">
           <p>© {currentYear} FECECAM BÉNIN - Tous Droits Réservés. Conforme aux normes d'accessibilité WCAG 2.1 AA.</p>
           <div className="flex flex-wrap gap-4 text-gray-300">
